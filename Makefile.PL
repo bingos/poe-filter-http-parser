@@ -1,0 +1,17 @@
+use strict;
+use inc::Module::Install;
+name 'POE-Filter-HTTP-Parser';
+author 'Chris Williams <chris@bingosnet.co.uk>';
+version_from 'lib/POE/Filter/HTTP/Parser.pm';
+abstract_from 'lib/POE/Filter/HTTP/Parser.pm';
+license 'perl';
+perl_version '5.006';
+build_requires 'Test::More' => 0.47;
+build_requires 'Test::POE::Client::TCP' => 0.10;
+build_requires 'Test::POE::Server::TCP' => 0.16;
+requires 'POE' => 1.003;
+requires 'HTTP::Status' => 0;
+requires 'HTTP::Request' => 0;
+requires 'HTTP::Response' => 0;
+requires 'HTTP::Parser' => 0.04;
+WriteAll();

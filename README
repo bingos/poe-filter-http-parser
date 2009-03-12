@@ -1,0 +1,77 @@
+NAME
+    POE::Filter::HTTP::Parser - A POE filter for HTTP based on HTTP::Parser
+
+SYNOPSIS
+        use POE::Filter::HTTP::Parser;
+
+        my $request_filter = POE::Filter::HTTP::Parser->new( type => 'request' );
+        my $arrayref_of_request_objects = $filter->get( [ $stream ] );
+
+        my $response_filter = POE::Filter::HTTP::Parser->new( type => 'response' );
+        my $arrayref_of_response_objects = $filter->get( [ $stream ] );
+
+DESCRIPTION
+    POE::Filter::HTTP::Parser is a POE::Filter for HTTP which is based on
+    HTTP::Parser.
+
+    It will produce HTTP::Request or HTTP::Response objects from a stream of
+    HTTP text, depending on the "type" that is specified during construction
+    of the filter object.
+
+CONSTRUCTOR
+    "new"
+        Creates a new POE::Filter::HTTP::Parser object. Takes one optional
+        argument, whether to produce HTTP::Request objects, "request", or
+        HTTP::Reponse objects, "response". "response" is the default
+        behaviour if "type" is not specified.
+
+          'type', set to either 'request' or 'response', default is 'response';
+
+METHODS
+    "get"
+    "get_one_start"
+    "get_one"
+        Takes an arrayref which is contains lines of text. Returns an
+        arrayref of either HTTP::Request or HTTP::Response objects depending
+        on the "type" that has been specified.
+
+    "get_pending"
+        Returns any data remaining in a filter's input buffer. The filter's
+        input buffer is not cleared, however. Returns an array reference if
+        there's any data, or undef if the filter was empty.
+
+    "put"
+        Takes an arrayref of either HTTP::Response objects or HTTP::Request
+        objects depending on whether "type" is set to "request" or
+        "response", respectively.
+
+        If "type" is "response", then this accepts HTTP::Request objects. If
+        "type" is "request", then this accepts HTTP::Response objects.
+
+        This does make sense if you think about it.
+
+        The given objects are returned to their stream form.
+
+    "clone"
+        Makes a copy of the filter, and clears the copy's buffer.
+
+AUTHOR
+    Chris "BinGOs" Williams
+
+    The "put" method for HTTP responses was borrowed from POE::Filter::HTTPD
+    by Artur Bergman and Rocco Caputo.
+
+LICENSE
+    Copyright © Chris Williams, Artur Bergman and Rocco Caputo.
+
+    This module may be used, modified, and distributed under the same terms
+    as Perl itself. Please see the license that came with your Perl
+    distribution for details.
+
+SEE ALSO
+    POE::Filter
+
+    HTTP::Parser
+
+    POE::Filter::HTTPD
+

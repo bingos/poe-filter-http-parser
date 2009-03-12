@@ -1,0 +1,20 @@
+Changelog for POE::Filter::HTTP::Parser
+=======================================
+
+0.08	Thu Jan 29 14:29:53 GMT 2009
+	- Small bug in 'get_one', we should check that $string
+	  actually has something in it before passing to HTTP::Parser.
+
+0.06	Tue Jan 27 10:38:34 GMT 2009
+	- POD fixes. Inconsistent referral to the 'type'
+
+0.04	Fri Jan 23 12:18:06 GMT 2009
+	- Improved the documentation
+	- Clarified type to 'server' or 'client'
+	- Generate a HTTP::Response error on bad request in 'server' mode.
+	  much like POE::Filter::HTTPD does.
+	- Additional tests, added Test::POE::(Client|Server)::TCP as 
+	  build_requires
+
+0.02	Thu Jan 22 16:29:49 GMT 2009
+	- Initial CPAN Release
