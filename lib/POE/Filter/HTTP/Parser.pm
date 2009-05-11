@@ -7,7 +7,7 @@ use HTTP::Status qw(status_message RC_BAD_REQUEST RC_OK RC_LENGTH_REQUIRED);
 use base 'POE::Filter';
 use vars qw($VERSION);
 
-$VERSION = '0.08';
+$VERSION = '1.00';
 
 my %type_map = (
    'server', 'request',

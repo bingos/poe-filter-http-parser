@@ -1,6 +1,10 @@
 Changelog for POE::Filter::HTTP::Parser
 =======================================
 
+1.00	Mon May 11 22:59:58 BST 2009
+	- Added auto_license and githubmeta to Makefile.PL
+	- Bumped to a stable version
+
 0.08	Thu Jan 29 14:29:53 GMT 2009
 	- Small bug in 'get_one', we should check that $string
 	  actually has something in it before passing to HTTP::Parser.
