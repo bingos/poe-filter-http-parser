@@ -19,6 +19,7 @@ README
 t/00_compile.t
 t/01_filter_req.t
 t/01_filter_resp.t
+t/01_get_pending.t
 t/02_in_use.t
 t/03_bad_request.t
 t/99_pod.t

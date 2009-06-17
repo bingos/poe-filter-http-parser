@@ -15,5 +15,6 @@ requires 'HTTP::Status' => 0;
 requires 'HTTP::Request' => 0;
 requires 'HTTP::Response' => 0;
 requires 'HTTP::Parser' => 0.04;
+auto_provides;
 githubmeta;
 WriteAll();

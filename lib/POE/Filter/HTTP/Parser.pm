@@ -7,7 +7,7 @@ use HTTP::Status qw(status_message RC_BAD_REQUEST RC_OK RC_LENGTH_REQUIRED);
 use base 'POE::Filter';
 use vars qw($VERSION);
 
-$VERSION = '1.00';
+$VERSION = '1.02';
 
 my %type_map = (
    'server', 'request',
@@ -153,8 +153,8 @@ sub clone {
 sub get_pending {
   my $self = shift;
   my $data = $self->{parser}->data();
-  return unless $data or scalar @$self->{BUFFER};
-  return [ ( $data ? $data : () ), @$self->{BUFFER} ];
+  return unless $data or scalar @{ $self->{BUFFER} };
+  return [ ( $data ? $data : () ), @{ $self->{BUFFER} } ];
 }
 
 sub _build_basic_response {

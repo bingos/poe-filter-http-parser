@@ -1,6 +1,9 @@
 Changelog for POE::Filter::HTTP::Parser
 =======================================
 
+1.02	Wed Jun 17 16:19:05 BST 2009
+	- Fixed small bug in get_pending()
+
 1.00	Mon May 11 22:59:58 BST 2009
 	- Added auto_license and githubmeta to Makefile.PL
 	- Bumped to a stable version
