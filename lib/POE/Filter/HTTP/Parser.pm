@@ -8,7 +8,7 @@ use base 'POE::Filter';
 use vars qw($VERSION);
 use Encode qw[encode_utf8];
 
-$VERSION = '1.02';
+$VERSION = '1.04';
 
 my %type_map = (
    'server', 'request',

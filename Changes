@@ -1,6 +1,10 @@
 Changelog for POE::Filter::HTTP::Parser
 =======================================
 
+1.04  Wed Jul 28 12:59:47 BST 2010
+  - Apply a patch from Dariusz Jackowski [RT#59772] which fixes 
+    double encoded utf-8 strings.
+
 1.02	Wed Jun 17 16:19:05 BST 2009
 	- Fixed small bug in get_pending()
 
