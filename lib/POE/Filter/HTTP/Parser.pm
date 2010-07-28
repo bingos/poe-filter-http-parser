@@ -1,14 +1,13 @@
 package POE::Filter::HTTP::Parser;
 
+# ABSTRACT: A HTTP POE filter for HTTP clients or servers
+
 use strict;
 use warnings;
 use HTTP::Parser;
 use HTTP::Status qw(status_message RC_BAD_REQUEST RC_OK RC_LENGTH_REQUIRED);
 use base 'POE::Filter';
-use vars qw($VERSION);
 use Encode qw[encode_utf8];
-
-$VERSION = '1.04';
 
 my %type_map = (
    'server', 'request',
@@ -200,11 +199,8 @@ sub _build_error {
 }
 
 'I filter therefore I am';
-__END__
 
-=head1 NAME
-
-POE::Filter::HTTP::Parser - A HTTP POE filter for HTTP clients or servers
+=pod
 
 =head1 SYNOPSIS
 
@@ -292,19 +288,11 @@ Makes a copy of the filter, and clears the copy's buffer.
 
 =back
 
-=head1 AUTHOR
-
-Chris C<BinGOs> Williams
+=head1 CREDITS
 
 The C<put> method for HTTP responses was borrowed from L<POE::Filter::HTTPD>,
 along with the code to generate L<HTTP::Response> on a parse error,
 by Artur Bergman and Rocco Caputo.
-
-=head1 LICENSE
-
-Copyright E<copy> Chris Williams, Artur Bergman and Rocco Caputo.
-
-This module may be used, modified, and distributed under the same terms as Perl itself. Please see the license that came with your Perl distribution for details.
 
 =head1 SEE ALSO
 
