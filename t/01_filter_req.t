@@ -27,6 +27,6 @@ foreach my $test ( $filter, $clone ) {
    foreach my $req ( @$events ) {
      isa_ok( $req, 'HTTP::Request' );
      is( $req->method, 'GET', 'Request method was okay' );
-     is( $req->uri->as_string, '/', 'The URI was okay' );
+     is( $req->uri->path, '/', 'The URI was okay' );
    }
 }
