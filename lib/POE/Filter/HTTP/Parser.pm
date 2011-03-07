@@ -36,7 +36,7 @@ sub get_one_start {
 sub get_one {
   my $self = shift;
   my $events = [];
-  
+
   my $string = shift @{ $self->{BUFFER} };
   return [] unless $string;
 
@@ -234,7 +234,7 @@ objects and convert them to HTTP streams.
 With the C<type> set to C<server>, the reverse will happen. C<get> will parse L<HTTP::Request>
 objects from HTTP streams and C<put> will accept L<HTTP::Response> objects and convert them to
 HTTP streams. Like L<POE::Filter::HTTPD> if there is an error parsing the HTTP request, this
-filter will generate a L<HTTP::Response> object instead, to encapsulate the error message, 
+filter will generate a L<HTTP::Response> object instead, to encapsulate the error message,
 suitable for simply sending back to the requesting client.
 
 =head1 CONSTRUCTOR
@@ -261,7 +261,7 @@ if C<type> is not specified.
 
 =item C<get_one>
 
-Takes an arrayref which contains lines of text. Returns an arrayref of either 
+Takes an arrayref which contains lines of text. Returns an arrayref of either
 L<HTTP::Request> or L<HTTP::Response> objects depending on the C<type> that has been
 specified.
 
