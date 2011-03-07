@@ -73,7 +73,7 @@ sub httpd_client_input {
   my $test = delete $heap->{current_test};
   isa_ok( $req, 'HTTP::Request' );
   is( $req->method, 'GET', 'Request method is GET' );
-  is( $req->uri->as_string, $test, 'Correct path' );
+  is( $req->uri->path, $test, 'Correct path' );
   is( $req->header('X-HTTP-Version'), '1.1', 'X-HTTP-Version' );
   diag($req->as_string);
   my $resp = HTTP::Response->new( 200 );
